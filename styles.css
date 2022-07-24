@@ -1,0 +1,19 @@
+#container {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  padding: 10px;
+}
+
+.item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  height: 10px;
+}
+
+.color {
+  background-color: red;
+}
+
+/* .item:hover {
+  background-color: red;
+} */
