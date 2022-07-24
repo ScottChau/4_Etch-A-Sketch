@@ -35,16 +35,17 @@ function randomColor() {
 }
 
 function reset() {
-  existingGrids = document.querySelectorAll(".item");
   let grid = parseInt(
     prompt("How many grid do you want for your sketch? eg. 16 32 48 64")
   );
+  existingGrids = document.querySelectorAll(".item");
+  existingGrids.forEach((item) => {
+    item.remove();
+  });
   if (grid <= 100) {
-    existingGrids.forEach((item) => {
-      item.remove();
-    });
     return makeGrid(grid, grid);
   } else {
+    makeGrid(32, 32);
     return alert("Invaild input, Please enter 1 to 100");
   }
 }
