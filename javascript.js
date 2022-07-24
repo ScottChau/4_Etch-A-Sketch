@@ -1,12 +1,15 @@
 const container = document.querySelector("#container");
+const button = document.querySelector("#reset");
 
 function makeGrid(col, row) {
   for (let i = 0; i < col * row; i++) {
+    container.style.setProperty("--grid-rows", row);
+    container.style.setProperty("--grid-cols", col);
     gridItem = document.createElement("div");
     gridItem.classList.add(`item`);
-    // gridItem.classList.add(`item${[i]}`);
     container.appendChild(gridItem);
   }
+  // have to create the grid first before using mouseOver function
   mouseOver();
 }
 
@@ -27,5 +30,22 @@ function randomColor() {
   }
   return color;
 }
+
+function reset() {
+  existingGrids = document.querySelectorAll(".item");
+  let grid = parseInt(
+    prompt("How many grid do you want for your sketch? eg. 16 32 48 64")
+  );
+  if (grid <= 100) {
+    existingGrids.forEach((item) => {
+      item.remove();
+    });
+    return makeGrid(grid, grid);
+  } else {
+    return alert("Invaild input, Please input 1 to 100 grid");
+  }
+}
+
+button.addEventListener("click", reset);
 
 makeGrid(16, 16);
