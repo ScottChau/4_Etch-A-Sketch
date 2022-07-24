@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
 const button = document.querySelector("#reset");
 
+// Create Grid
 function makeGrid(col, row) {
   for (let i = 0; i < col * row; i++) {
     container.style.setProperty("--grid-rows", row);
@@ -13,6 +14,7 @@ function makeGrid(col, row) {
   mouseOver();
 }
 
+// Highlighted Grid
 function mouseOver() {
   let items = document.querySelectorAll(".item");
   items.forEach((item) => {
@@ -22,6 +24,7 @@ function mouseOver() {
   });
 }
 
+// Make random color
 function randomColor() {
   let letters = "0123456789ABCDEF";
   let color = "#";
@@ -42,10 +45,10 @@ function reset() {
     });
     return makeGrid(grid, grid);
   } else {
-    return alert("Invaild input, Please input 1 to 100 grid");
+    return alert("Invaild input, Please enter 1 to 100");
   }
 }
 
 button.addEventListener("click", reset);
 
-makeGrid(16, 16);
+makeGrid(32, 32);
