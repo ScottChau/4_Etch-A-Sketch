@@ -3,6 +3,9 @@
 :root {
   --grid-cols: 5;
   --grid-rows: 5;
+  --red: 255;
+  --green: 255;
+  --blue: 255;
 }
 
 #container {
@@ -15,12 +18,8 @@
 }
 
 .item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(var(--red), var(--green), var(--blue), 0.8);
   border: 1px solid rgba(0, 0, 0, 0.8);
-}
-
-.color {
-  background-color: red;
 }
 
 #reset {
